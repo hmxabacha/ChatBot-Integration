@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Simple ChatGPT Data Q&A</h2>
+
+  <div class="form-group">
+    <label for="data">Data:</label>
+    <!-- <textarea
+      id="data"
+      rows="6"
+      [(ngModel)]="data"
+      placeholder="Paste your data here"
+      class="form-control"
+      (input)="onInputChange()">
+    </textarea> -->
+    <input type="file" (change)="onFileSelected($event)" accept=".xlsx" />
+  </div>
+
+  <div class="form-group">
+    <label for="question">Question:</label>
+    <div class="input-group">
+      <input
+        id="question"
+        type="text"
+        [(ngModel)]="question"
+        placeholder="Ask a question about the data"
+        class="form-control"
+        (keyup.enter)="ask()"
+        (input)="onInputChange()"
+        [disabled]="loading" />
+      <button
+        (click)="ask()"
+        [disabled]="loading || !question.trim() || !data.trim()"
+        class="btn">
+        {{ loading ? 'Thinking...' : 'Ask' }}
+      </button>
+    </div>
+  </div>
+
+  @if(loading) {
+    <div class="loading">
+      <p>🤔 Analyzing your data...</p>
+    </div>
+  }
+
+  @if(response && !loading) {
+    <div class="response">
+      <h3>Answer:</h3>
+      <div class="response-content">{{ response }}</div>
+    </div>
+  }
+
+  @if(error) {
+    <div class="error">
+      <p>❌ {{ error }}</p>
+    </div>
+  }
+</div>

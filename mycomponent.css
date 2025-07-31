@@ -1,0 +1,104 @@
+/* Classic Style for Q&A Chat Page */
+
+body {
+  font-family: "Georgia", serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 30px;
+  color: #333;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover:not([disabled]) {
+  background-color: #1f6391;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.response {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-left: 6px solid #2980b9;
+  border-radius: 6px;
+}
+
+.response-content {
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.loading {
+  margin-top: 20px;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
+
+.error {
+  margin-top: 20px;
+  color: #c0392b;
+  font-weight: bold;
+  text-align: center;
+}
