@@ -19,7 +19,7 @@ export class AppComponent {
   error = '';
   loading = false;
 
-  private apiKey = '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';
+  private apiKey = ''; // Add your apiKey here 
 
   constructor(private http: HttpClient) {
     console.log("ChatGPT Q&A component initialized");
